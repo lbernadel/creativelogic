@@ -1,5 +1,4 @@
 import React from 'react'
-import Link from 'next/link'
 
 const links = [
   { href: '/', label: 'HOME'},
@@ -22,10 +21,6 @@ const Nav = () => (
     </ul>
 
     <style jsx>{`
-      :global(body) {
-        margin: 0;
-        font-family: G
-      }
       nav {
         text-align: center;
       }
