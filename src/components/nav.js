@@ -1,4 +1,5 @@
 import React from 'react'
+import Link from 'next/link'
 
 const links = [
   { href: '/', label: 'HOME'},
@@ -14,9 +15,9 @@ const Nav = () => (
   <nav>
     <ul>
       {links.map(({ key, href, label }) => (
-        <li key={key}>
-          <a href={href} className="nav-tabs">{label}</a>
-        </li>
+        <Link key={key} href={href}>
+          <a title={label} aria-label={label} className="nav-tabs">{label}</a>
+        </Link>
       ))}
     </ul>
 
@@ -26,19 +27,21 @@ const Nav = () => (
       }
       ul {
         display: flex;
-        justify-content: space-between;
+        justify-content: space-around;
       }
       nav > ul {
         padding: 4px 16px;
       }
-      li {
+      Link {
         display: flex;
         padding: 6px 8px;
       }
       a {
-        color: #067df7;
+        color: #614344;
         text-decoration: none;
-        font-size: 13px;
+      }
+      a:hover {
+        color: #9F87AF;
       }
     `}</style>
   </nav>
