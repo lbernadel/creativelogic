@@ -10,11 +10,11 @@ const Home = () => (
       <link rel="icon" href="/favicon.ico" />
     </Head>
 
-    <div className="hero">
+    <>
       <h1 className="title">Hi, I'm Laurie.</h1>
-      <p className="description">
+      {/* <p className="description">
         To get started, edit <code>pages/index.js</code> and save to reload.
-      </p>
+      </p> */}
 
       {/* <div className="row">
         <a href="https://nextjs.org/docs" className="card">
@@ -33,23 +33,17 @@ const Home = () => (
           <p>Find other example boilerplates on the Next.js GitHub.</p>
         </a>
       </div> */}
-    </div>
+    </>
 
     <style jsx>{`
-      .hero {
-        width: 100%;
-        color: #333;
-      }
       .title {
-        margin: 0;
         width: 100%;
-        padding-top: 10%;
-        line-height: 1.15;
+        padding-top: 4vh;
+        line-height: 1.5;
       }
       .title,
       .description {
         text-align: center;
-        color: inherit;
       }
       // .row {
       //   max-width: 880px;
