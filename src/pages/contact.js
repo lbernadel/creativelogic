@@ -54,6 +54,8 @@ const Contact = () => {
           Thanks for stopping by! You can send me a note with the form below.{" "}
         </p>
         <p>Please remember to be respectful.</p>
+
+        {/* FORM */}
         <form>
           {/* First & Last Names */}
           <div className="form-row">
@@ -125,7 +127,7 @@ const Contact = () => {
               ></textarea>
             </div>
           </div>
-          <button type="submit" onClick={handleSubmit} className="btn btn-info btn-block">
+          <button type="button" onClick={handleSubmit} className="btn btn-info btn-block">
             Send
           </button>
         </form>

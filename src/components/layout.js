@@ -15,7 +15,6 @@ export default ({ children }) => (
       // }
       html,
       body {
-        cursor: default;
         font-family: Verdana, Geneva, sans-serif;
         font-style: normal;
         font-variant: normal;

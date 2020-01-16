@@ -1,22 +1,20 @@
 [
   {
-    "creation": "Write tests, not too many, mostly integration",
-    "author": "Guillermo Rauch"
+    "creation": "Hillcrest Charlotte",
+    "description": "this is a description",
+    "app": "https://hillcrestcharlotte.herokuapp.com/",
+    "code": "https://github.com/bsjherbert/HillcrestCharlotte"
   },
   {
-    "creation": "The future is serverless",
-    "author": "Guillermo Rauch"
+    "creation": "FitnessMate",
+    "description": "this is a description",
+    "app": "https://fitnessmate.herokuapp.com/",
+    "code": "https://github.com/lbernadel/fitnessmate"
   },
   {
-    "creation": "Where there is a will, there is a way",
-    "author": "Unknown"
-  },
-  {
-    "creation": "You Learn More From Failure Than From Success. Don’t Let It Stop You. Failure Builds Character.",
-    "author": "Unknown"
-  },
-  {
-    "creation": "Every passing moment, we are nearing death and a new Javascript framework",
-    "author": "Amandeep Singh"
+    "creation": "Josh21",
+    "description": "this is a description",
+    "app": "https://lbernadel.github.io/Joshis21/",
+    "code": "https://github.com/lbernadel/Joshis21"
   }
 ]

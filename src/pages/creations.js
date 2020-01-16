@@ -1,42 +1,101 @@
-import React from 'react'
-import Head from 'next/head'
-import useSWR from 'swr'
+import React from "react";
+import Head from "next/head";
+import useSWR from "swr";
 
-import Layout from '../components/layout'
+import Layout from "../components/layout";
+import fetch from "node-fetch";
 
-function fetcher(url) {
-  return fetch(url).then(r => r.json());
-}
+const fetcher = url => fetch(url).then(r => r.json());
 
 function Creations() {
-  const {data, error} = useSWR('api/bestCreation', fetcher)
-  const author = data?.author
-  let creation = data?.creation
+  const { data, error } = useSWR("api/bestCreation", fetcher);
 
-    if(!data) creation = "Loading..."
-    if(error) creation = "Uh-oh! Failed to fetch the creations."
+  if (!data) return <h6>Loading...</h6>;
+  if (error) return <h5>Uh-oh! Failed to fetch the creations.</h5>;
 
-  return(
-  <Layout>
-    <Head>
-      <title>Creations | Creative Logic</title>
-      <link
-        rel="stylesheet"
-        href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
-        crossOrigin="anonymous"
-      />
-    </Head>
+  return (
+    <Layout>
+      <Head>
+        <title>Creations | Creative Logic</title>
+        <link
+          rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+          crossOrigin="anonymous"
+        />
+      </Head>
 
-    <div className="container">
-      <h1>Creations</h1>
-      <div>
-        {creation}
+      <div className="container">
+        <h1>Creations</h1>
+        <div>
+          {data.map(item => {
+            return (
+              <div className="media rounded my-4 p-3" key={item.app}>
+                <img
+                  src="https://placedog.net/150/150?random"
+                  alt={`${item.creation}-thumbnail`}
+                  className="align-self-center mr-3 img-fluid img-thumbnail"
+                />
+                <div className="media-body ml-3">
+                  <h5 className="mt-0 title">{item.creation}</h5>
+                  <p>{item.description}</p>
+                  <span
+                    className="btn-group py-2"
+                    role="group"
+                    aria-label="Button links for app info"
+                  >
+                    <a
+                      className="btn"
+                      href={item.app}
+                      title={item.creation}
+                      target="_blank"
+                      rel="noreferrer"
+                      role="button"
+                    >
+                      live app
+                    </a>
+                    <a
+                      className="btn"
+                      href={item.code}
+                      title={`GitHub Repo: ${item.creation}`}
+                      target="_blank"
+                      rel="noreferrer"
+                      role="button"
+                    >
+                      code
+                    </a>
+                  </span>
+                </div>
+              </div>
+            );
+          })}
+        </div>
       </div>
-  {author && <span>- {author}</span>}
-    </div>
-  </Layout>
-);
+
+      <style jsx>{`
+        .media-body {
+          text-align: left;
+        }
+        .media {
+          background-color: rgba(159, 135, 175, 0.8);
+        }
+        .title {
+          color: #fff;
+        }
+        a:hover {
+          background-color: #88527f;
+          color: #fff;
+        }
+        a {
+          background-color: #614344;
+          border: solid 1px #b1ddf1;
+          color: #b1ddf1;
+          text-decoration: none;
+          text-transform: uppercase;
+        }
+      `}</style>
+    </Layout>
+  );
 }
 
 export default Creations;
