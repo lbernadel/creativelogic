@@ -9,7 +9,7 @@ function fetcher(url) {
 }
 
 function Creations() {
-  const {data, error} = useSWR('api/randomCreation', fetcher)
+  const {data, error} = useSWR('api/bestCreation', fetcher)
   const author = data?.author
   let creation = data?.creation
 
