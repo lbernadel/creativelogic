@@ -1,4 +1,3 @@
-// import useSWR from 'swr'
 import fetch from "node-fetch";
 
 const SENDGRID_API = "https://api.sendgrid.com/v3/mail/send";

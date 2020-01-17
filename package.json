@@ -3,8 +3,16 @@
   "description": "Online web developer portfolio for Laurie Bernadel",
   "homepage": "https://creativelogic.dev/",
   "version": "0.1.0",
-  "keywords": ["NextJS", "React", "developer portfolio", "netlify"],
-  "repository": {"type": "git", "url": "https://github.com/lbernadel/creativelogic"},
+  "keywords": [
+    "NextJS",
+    "React",
+    "developer portfolio",
+    "netlify"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lbernadel/creativelogic"
+  },
   "license": "MIT",
   "scripts": {
     "dev": "next dev",
@@ -15,7 +23,6 @@
     "@sendgrid/mail": "^6.4.0",
     "dotenv": "^8.2.0",
     "dotenv-webpack": "^1.7.0",
-    "isomorphic-unfetch": "^3.0.0",
     "next": "9.1.7",
     "node-fetch": "^2.6.0",
     "react": "16.12.0",
@@ -23,8 +30,8 @@
     "swr": "^0.1.16"
   },
   "devDependencies": {
-    "@types/react": "^16.9.17",
     "@types/node": "^13.1.7",
+    "@types/react": "^16.9.17",
     "typescript": "^3.7.4"
   }
 }
