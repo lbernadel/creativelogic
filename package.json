@@ -20,12 +20,18 @@
     "start": "next start"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.26",
+    "@fortawesome/free-brands-svg-icons": "^5.12.0",
+    "@fortawesome/free-solid-svg-icons": "^5.12.0",
+    "@fortawesome/react-fontawesome": "^0.1.8",
     "@sendgrid/mail": "^6.4.0",
+    "@zeit/next-css": "^1.0.1",
     "dotenv": "^8.2.0",
     "dotenv-webpack": "^1.7.0",
     "next": "9.1.7",
     "node-fetch": "^2.6.0",
     "react": "16.12.0",
+    "react-bootstrap": "^1.0.0-beta.16",
     "react-dom": "16.12.0",
     "swr": "^0.1.16"
   },

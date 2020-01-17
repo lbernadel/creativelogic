@@ -1,7 +1,8 @@
 const path = require('path')
 const Dotenv = require('dotenv-webpack')
+const withCSS = require('@zeit/next-css')
 
-const next_config = {
+let next_config = withCSS({
   webpack: config => {
     config.plugins = config.plugins || []
 
@@ -14,8 +15,9 @@ const next_config = {
       })
     ]
 
+
     return config;
   }
-}
+})
 
 module.exports = {...next_config}
