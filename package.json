@@ -7,7 +7,6 @@
   "repository": {"type": "git", "url": "https://github.com/lbernadel/creativelogic"},
   "license": "MIT",
   "scripts": {
-    "install": "yarn run install && build",
     "dev": "next dev",
     "build": "next build",
     "start": "next start"
