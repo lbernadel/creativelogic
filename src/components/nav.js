@@ -1,6 +1,6 @@
 import React from "react";
-import Link from "next/link";
 import Logo from "./logo";
+import { Navbar, Nav } from "react-bootstrap";
 
 const links = [
   { href: "/", label: "HOME" },
@@ -12,68 +12,84 @@ const links = [
   return link;
 });
 
-const Nav = () => (
-  <nav>
+const Navigation = () => (
+  <Navbar
+    style={{
+      backgroundColor: "black",
+      borderBottom: "10px solid #B1DDF1",
+      height: "30vh",
+      padding: "0.25rem !important",
+      margin: "auto"
+    }}
+    variant="dark"
+    expand="md"
+    collapseOnSelect
+  >
     <Logo />
-    <ul>
+
+    <Navbar.Toggle aria-controls="nav-menu" />
+
+    <Navbar.Collapse id="nav-menu">
       {links.map(({ key, href, label }) => (
-        <li key={key}>
-          <Link href={href}>
-            <a title={label} aria-label={label} className="nav-tabs">
-              {label}
-            </a>
-          </Link>
-        </li>
+        <Nav.Link
+          key={key}
+          href={href}
+          title={label}
+          aria-label={label}
+          style={{ textAlign: "right", color: "#9f87af" }} 
+        >
+          {label}
+        </Nav.Link>
       ))}
-    </ul>
+    </Navbar.Collapse>
 
     <style jsx>{`
-      nav {
-        height: inherit;
-        width: 100vw;
-      }
-      nav>ul {
-        display: flex;
-        padding: 0 0.5em;
-        margin: auto;
-        height: inherit;
-        width: 66%;
-        list-style: none;
-        align-items: center;
-        justify-content: space-evenly;
-      }
-      li {
-        padding: auto;
-        font-size: 1rem;
-        margin: 0 1em;
-        text-decoration: none;
-      }
-      a {
-        color: #614344;
-        text-decoration: none;
-      }
-      a:hover {
+      // nav {
+      //   height: inherit;
+      //   width: 100vw;
+      // }
+      // nav>ul {
+      //   display: flex;
+      //   padding: 0 0.5em;
+      //   margin: auto;
+      //   height: inherit;
+      //   width: 66%;
+      //   list-style: none;
+      //   align-items: center;
+      //   justify-content: space-evenly;
+      // }
+      // li {
+      //   padding: auto;
+      //   font-size: 1rem;
+      //   margin: 0 1em;
+      //   text-decoration: none;
+      // }
+      // a {
+      //   color: #614344;
+      //   text-decoration: none;
+      // }
+      #nav-menu>a:hover {
         color: #9f87af;
-        border-bottom: 2px solid #88527f;
+        border-bottom: 2px solid #fff;
       }
-      @media (max-width: 860px) {
-        nav {
-          flex-direction: column;
-          flex-wrap: wrap;
-          align-content: center;
-        }
-        ul {
-          flex-shrink: 2;
-          // align-self: flex-end;
-          float: right;
-        }
-        li {
-          display: inline-block;
-          font-size: 0.8rem;
-        }
-      }
+      // @media (max-width: 860px) {
+      //   nav {
+      //     flex-direction: column;
+      //     flex-wrap: wrap;
+      //     align-content: center;
+      //   }
+      //   ul {
+      //     flex-shrink: 2;
+      //     // align-self: flex-end;
+      //     float: right;
+      //   }
+      //   li {
+      //     display: inline-block;
+      //     font-size: 0.8rem;
+      //   }
+      // }
     `}</style>
-  </nav>
+  </Navbar>
 );
 
-export default Nav;
+export default Navigation;

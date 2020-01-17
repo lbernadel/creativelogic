@@ -1,6 +1,6 @@
 import Head from "next/head";
 
-import Header from "./header";
+import Navigation from "./nav";
 import Footer from "./footer";
 
 export default ({ children }) => (
@@ -27,10 +27,10 @@ export default ({ children }) => (
       />
     </Head>
 
-    <Header />
+    <Navigation />
 
     <div className="main-container">{children}</div>
-    
+
     <Footer />
 
     <style jsx global>{`
@@ -40,14 +40,13 @@ export default ({ children }) => (
         color: #453f37;
         text-align: center;
         align-items: center;
-        background: #fff url("/static/brushed-alum.png");
+        background: #d9d9d9 url("/static/brushed-alum.png");
       }
       body {
         margin: 0;
       }
       h1 {
         font-weight: 300;
-        color: #453f37;
       }
       h2 {
         font-weight: 300;
@@ -56,7 +55,7 @@ export default ({ children }) => (
         font-weight: 500;
       }
       button {
-        text-transform: uppercase;
+        text-transform: capitalize;
       }
       // Layout
       .main-container {
@@ -71,7 +70,7 @@ export default ({ children }) => (
       .site-wrapper {
         min-height: 100vh;
         position: relative;
-        max-width: 100%;
+        width: 100vw;
         margin: 0;
         padding: 0;
       }

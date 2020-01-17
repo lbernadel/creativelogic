@@ -1,34 +1,26 @@
-import Link from "next/link";
+import { NavbarBrand, Container } from "react-bootstrap";
 
 const Logo = () => (
-  <div className="logo-container">
-    <Link href="/">
-        <img src="/static/creativelogic_long.png" alt="Creative Logic Logo" />
-    </Link>
-
-    <style jsx>{`
-      .logo-container {
-        height: inherit;
-        width: 33.33%;
-        margin: auto;
-        float: left;
-        }
-      img {
-        display: block;
-        width: auto;
-        margin: auto;
-        height: inherit;
-        cursor: pointer;
-      }
-      @media (max-width: 860px) {
-        .logo-container {
-          flex-shrink: 2;
-          // align-self: flex-start;
-          float: left;
-        }
-      }
-    `}</style>
-  </div>
+  <Container
+    className="justify-content-center"
+    style={{
+      width: "auto",
+      height: "25vh",
+      margin: "auto",
+      padding: "2px !important"
+    }}
+  >
+    <NavbarBrand
+      href="/"
+      style={{ height: "inherit", margin: "auto", width: "auto" }}
+    >
+      <img
+        style={{ height: "inherit", width: "inherit" }}
+        src="/static/creativelogic_long-black.png"
+        alt="Creative Logic Logo"
+      />
+    </NavbarBrand>
+  </Container>
 );
 
 export default Logo;
