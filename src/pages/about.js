@@ -10,7 +10,8 @@ const About = () => (
     </Head>
 
     <div className="container">
-      <h1>About Us</h1>
+      <h1>About</h1>
+      <h6>This page is currently under construction. It'll be updated soon!</h6>
     </div>
   </Layout>
 );

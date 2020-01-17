@@ -6,16 +6,12 @@ const Header = () => (
 
     <style jsx>{`
       .header-wrapper {
-        padding: 30px;
         display: flex;
+        height: 25vh;
+        padding: 0.5rem;
         justify-content: space-around;
         align-items: center;
-      }
-      @media (max-width: 600px) {
-        .header-wrapper {
-          display: block;
-          text-align: center;
-        }
+        background-color: rgba(177, 221, 241, 0.6);
       }
     `}</style>
   </div>

@@ -8,7 +8,7 @@ const links = [
   { href: "/creations", label: "CREATIONS" },
   { href: "/contact", label: "CONTACT" }
 ].map(link => {
-  link.key = `nav-link-${link.label}`;
+  link.key = `nav-tab-${link.label}`;
   return link;
 });
 
@@ -29,24 +29,24 @@ const Nav = () => (
 
     <style jsx>{`
       nav {
-        text-align: center;
+        height: inherit;
+        width: 100vw;
       }
-      ul {
+      nav>ul {
         display: flex;
-        margin: 5px 0;
-        padding: 0;
+        padding: 0 0.5em;
+        margin: auto;
+        height: inherit;
+        width: 66%;
         list-style: none;
-        // float: right;
-        // justify-content: space-around;
-      }
-      nav > ul {
-        padding: 4px 16px;
+        align-items: center;
+        justify-content: space-evenly;
       }
       li {
-        // display: flex;
-        padding: 1%;
-        font-size: 1.5rem;
+        padding: auto;
+        font-size: 1rem;
         margin: 0 1em;
+        text-decoration: none;
       }
       a {
         color: #614344;
@@ -54,17 +54,22 @@ const Nav = () => (
       }
       a:hover {
         color: #9f87af;
-        padding-bottom: 5px;
-        border-bottom: 2px solid #88527F;
+        border-bottom: 2px solid #88527f;
       }
-      @media (max-width: 600px) {
+      @media (max-width: 860px) {
+        nav {
+          flex-direction: column;
+          flex-wrap: wrap;
+          align-content: center;
+        }
         ul {
-          display: block;
-          margin-top: 3vh;
+          flex-shrink: 2;
+          // align-self: flex-end;
+          float: right;
         }
         li {
           display: inline-block;
-          font-size: 1rem;
+          font-size: 0.8rem;
         }
       }
     `}</style>

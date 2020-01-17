@@ -1,18 +1,21 @@
 [
   {
     "creation": "Hillcrest Charlotte",
+    "img": "",
     "description": "this is a description",
     "app": "https://hillcrestcharlotte.herokuapp.com/",
     "code": "https://github.com/bsjherbert/HillcrestCharlotte"
   },
   {
     "creation": "FitnessMate",
+    "img": "",
     "description": "this is a description",
     "app": "https://fitnessmate.herokuapp.com/",
     "code": "https://github.com/lbernadel/fitnessmate"
   },
   {
     "creation": "Josh21",
+    "img": "",
     "description": "this is a description",
     "app": "https://lbernadel.github.io/Joshis21/",
     "code": "https://github.com/lbernadel/Joshis21"

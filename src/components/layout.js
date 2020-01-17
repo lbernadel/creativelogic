@@ -1,73 +1,79 @@
-import Header from './header';
-import Footer from './footer';
+import Head from "next/head";
+
+import Header from "./header";
+import Footer from "./footer";
 
 export default ({ children }) => (
   <div className="site-wrapper">
+    <Head>
+      <link rel="icon" href="/favicon.ico" />
+      <link
+        rel="icon"
+        type="image/png"
+        href="/static/favicon-32x32.png"
+        sizes="32x32"
+      />
+      <link
+        rel="icon"
+        type="image/png"
+        href="/static/favicon-16x16.png"
+        sizes="16x16"
+      />
+      <link
+        rel="stylesheet"
+        href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+        crossOrigin="anonymous"
+      />
+    </Head>
+
     <Header />
+
     <div className="main-container">{children}</div>
+    
     <Footer />
 
     <style jsx global>{`
-      // *,
-      // *::before,
-      // *::after {
-      //   box-sizing: border-box;
-      // }
       html,
       body {
         font-family: Verdana, Geneva, sans-serif;
-        font-style: normal;
-        font-variant: normal;
-        font-size: 16px;
-        line-height: 1.5rem;
-        font-weight: 400;
-        color: #453F37;
+        color: #453f37;
         text-align: center;
         align-items: center;
-        background: #fff url("https://www.transparenttextures.com/patterns/brushed-alum.png");
+        background: #fff url("/static/brushed-alum.png");
+      }
+      body {
+        margin: 0;
       }
       h1 {
-        font-size: 56px;
         font-weight: 300;
-        color: #453F37;
+        color: #453f37;
       }
       h2 {
-        font-size: 48px;
         font-weight: 300;
       }
-      h3 {
-        font-size: 40px;
-      }
-      h4 {
-        font-size: 32px;
-      }
-      h5 {
-        font-size: 24px;
-      }
       h6 {
-        font-size: 20px;
         font-weight: 500;
       }
       button {
-        font-size: 14px;
-        font-weight: 500;
         text-transform: uppercase;
-      }
-      caption {
-        font-size: 12px;
       }
       // Layout
       .main-container {
-        min-height: 60vh;
-        text-align: center;
+        min-height: 100vh;
         max-width: 80vw;
-        margin: 2vh 10vw;
+        margin: 0 10vw;
+        padding: 3vh 0 15vh 0;
       }
       a {
         cursor: pointer;
       }
       .site-wrapper {
-        max-height: 100vh;
+        min-height: 100vh;
+        position: relative;
+        max-width: 100%;
+        margin: 0;
+        padding: 0;
       }
     `}</style>
   </div>

@@ -3,24 +3,28 @@ import Link from "next/link";
 const Logo = () => (
   <div className="logo-container">
     <Link href="/">
-      <a>
         <img src="/static/creativelogic_long.png" alt="Creative Logic Logo" />
-      </a>
     </Link>
 
     <style jsx>{`
-      .logo-container img {
-        // text-align: center;
-        display: block
-        max-width: 250px
+      .logo-container {
+        height: inherit;
+        width: 33.33%;
+        margin: auto;
+        float: left;
+        }
+      img {
+        display: block;
+        width: auto;
+        margin: auto;
+        height: inherit;
+        cursor: pointer;
       }
-      // img {
-      //   min-height: 20vh;
-      //   max-height: 35vh;
-      // }
-      @media (max-width: 600px) {
+      @media (max-width: 860px) {
         .logo-container {
-          display: inline-block;
+          flex-shrink: 2;
+          // align-self: flex-start;
+          float: left;
         }
       }
     `}</style>
