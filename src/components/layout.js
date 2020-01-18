@@ -25,6 +25,7 @@ export default ({ children }) => (
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
         crossOrigin="anonymous"
       />
+      <link href="https://fonts.googleapis.com/css?family=Architects+Daughter|Sedgwick+Ave&display=swap" rel="stylesheet" />
     </Head>
 
     <Navigation />
@@ -46,7 +47,7 @@ export default ({ children }) => (
         margin: 0;
       }
       h1 {
-        font-weight: 300;
+        font-family: 'Sedgwick Ave', cursive;
       }
       h2 {
         font-weight: 300;
@@ -57,11 +58,14 @@ export default ({ children }) => (
       button {
         text-transform: capitalize;
       }
+      .nav-link {
+        font-family: 'Architects Daughter', cursive;
+      }
       // Layout
       .main-container {
         min-height: 100vh;
-        max-width: 80vw;
-        margin: 0 10vw;
+        max-width: 90vw;
+        margin: 0 5vw;
         padding: 3vh 0 15vh 0;
       }
       a {
