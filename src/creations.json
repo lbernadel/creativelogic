@@ -1,22 +1,31 @@
 [
   {
     "creation": "Hillcrest Charlotte",
-    "img": "",
-    "description": "this is a description",
+    "img": "/static/HillcrestCLT.png",
+    "role": "Co-Lead, Fullstack Developer (Team of 5)",
+    "roleDetail": "Built most of the front-end in React, created website theme with Material-UI, login/user authentication via Passport & JWT.",
+    "description": "A redesign of Hillcrest Baptist Church's website; the goal was to consolidate the information that the church provides its visitors and official members.",
+    "tech": "MERN stack, Material-UI, Axios, Passport.js, JSON Web Tokens (JWT), Chart.js, SendGrid",
     "app": "https://hillcrestcharlotte.herokuapp.com/",
     "code": "https://github.com/bsjherbert/HillcrestCharlotte"
   },
   {
     "creation": "FitnessMate",
-    "img": "",
-    "description": "this is a description",
+    "img": "/static/fitnessmate.png",
+    "role": "Sole Developer",
+    "roleDetail": "Created both front and back-end, following MVC structure with GET, POST, and UPDATE routes for the database.",
+    "description": "A fitness planner; displays activities planned for created workout sessions by date.",
+    "tech": "MongoDB/Mongoose, Bootstrap, Express.js, Node.js, REST APIs",
     "app": "https://fitnessmate.herokuapp.com/",
     "code": "https://github.com/lbernadel/fitnessmate"
   },
   {
     "creation": "Josh21",
-    "img": "",
-    "description": "this is a description",
+    "img": "/static/balloons.png",
+    "role": "Sole Developer",
+    "roleDetail": "Created in 24 hours, exploring CSS selectors, media queries, and JS ES6.",
+    "description": "An image heavy website created to celebrate my brother's 21st birthday.",
+    "tech": "Bootstrap, MDB, jQuery",
     "app": "https://lbernadel.github.io/Joshis21/",
     "code": "https://github.com/lbernadel/Joshis21"
   }
