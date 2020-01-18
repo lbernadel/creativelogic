@@ -1,8 +1,8 @@
 import Head from "next/head";
 import { Jumbotron, Button, Container } from 'react-bootstrap'
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faAngleDoubleRight } from '@fortawesome/free-solid-svg-icons'
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+// import { faAngleDoubleRight } from '@fortawesome/free-solid-svg-icons'
 
 import Layout from "../components/layout";
 
@@ -18,7 +18,7 @@ const Home = () => (
       <br />
       <h5>I enhance web experiences through the magic of code.</h5>
       <br />
-      <Button variant="info">turn <em>ideas</em> into <em>reality</em></Button>
+      <Button variant="info" href="/creations">Turn <em>ideas</em> into <em>reality</em></Button>
       </Container>
     </Jumbotron>
 

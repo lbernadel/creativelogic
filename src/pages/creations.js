@@ -1,17 +1,24 @@
-import React from "react";
 import Head from "next/head";
 import useSWR from "swr";
+import fetch from "node-fetch";
+import { Row, Col, Card, CardImg, Button, ButtonGroup, Media } from "react-bootstrap";
 
 import Layout from "../components/layout";
-import fetch from "node-fetch";
 
 const fetcher = url => fetch(url).then(r => r.json());
 
 function Creations() {
   let { data, error } = useSWR("api/bestCreation", fetcher);
 
-  if (!data) return data = `<h6>Loading...</h6>`;
-  if (error) return data = `<h5>Uh-oh! Failed to fetch the creations.</h5>`;
+  if (!data) return (data = <h6>Loading...</h6>);
+  if (error)
+    return (data = (
+      <h5>
+        Uh-oh! Failed to fetch the creations. Please reload the page to try
+        again or come back later. If the issue persists, please send me a note
+        to let me know!
+      </h5>
+    ));
 
   return (
     <Layout>
@@ -19,59 +26,80 @@ function Creations() {
         <title>Creations | Creative Logic</title>
       </Head>
 
-      <div className="container">
+      <>
         <h1>Creations</h1>
-        <div className="row">
-          {data.map(item => {
-            return (
-              <div className="media rounded my-4 mx-1 p-3 col-lg-6" key={item.app}>
-                <img
-                  src="https://placedog.net/150/150?random"
-                  alt={`${item.creation}-thumbnail`}
-                  className="align-self-center mr-3 img-fluid img-thumbnail"
-                />
-                <div className="media-body ml-3">
-                  <h5 className="mt-0 title">{item.creation}</h5>
-                  <p>{item.description}</p>
-                  <span
-                    className="btn-group py-2"
-                    role="group"
-                    aria-label="Button links for app info"
-                  >
-                    <a
-                      className="btn"
-                      href={item.app}
-                      title={item.creation}
-                      target="_blank"
-                      rel="noreferrer"
-                      role="button"
+        <Row>
+          <Col>
+            {data.map(item => {
+              return (
+                <Card className="rounded my-4 mx-1"
+                style={{ backgroundColor: "rgba(159, 135, 175, 0.8)" }}
+                key={item.app}
+                >
+                  <Row className="no-gutters">
+                    <Col
+                      xs={3}
+                      md={4}
+                      className="align-content-center"
                     >
-                      live app
-                    </a>
-                    <a
-                      className="btn"
-                      href={item.code}
-                      title={`GitHub Repo: ${item.creation}`}
-                      target="_blank"
-                      rel="noreferrer"
-                      role="button"
-                    >
-                      code
-                    </a>
-                  </span>
-                </div>
-              </div>
-            );
-          })}
-        </div>
-      </div>
+                      <CardImg
+                        src={item.img}
+                        alt={`${item.creation}-thumbnail`}
+                        style={{ backgroundColor: "white" }}
+                      />
+                    </Col>
+                    <Col xs={9} md={8}>
+                      <Card.Header>{item.role}</Card.Header>
+                      <Card.Body className="ml-3" style={{textAlign: "left"}}>
+                        <Card.Title className="mt-0 title">
+                          {item.creation}
+                        </Card.Title>
+                        <Card.Text>
+                          <em>Description</em>: {item.description}<br />
+                        </Card.Text>
+                        <Card.Text>
+                          <strong>Contributions</strong>: {item.roleDetail}
+                        </Card.Text>
+                        <ButtonGroup
+                          className="py-2"
+                          role="group"
+                          aria-label="Button links for app info"
+                        >
+                          <Button
+                            className="btn"
+                            href={item.app}
+                            title={item.creation}
+                            target="_blank"
+                            rel="noreferrer"
+                          >
+                            live app
+                          </Button>
+                          <Button
+                            className="btn"
+                            href={item.code}
+                            title={`GitHub Repo: ${item.creation}`}
+                            target="_blank"
+                            rel="noreferrer"
+                          >
+                            code
+                          </Button>
+                        </ButtonGroup>
+                      </Card.Body>
+                      <Card.Footer>
+                        <small className="text-muted">{`Tech Topics: ${item.tech}`}</small>
+                      </Card.Footer>
+                    </Col>
+                  </Row>
+                </Card>
+              );
+            })}
+          </Col>
+        </Row>
+      </>
 
       <style jsx>{`
         .media-body {
           text-align: left;
-        }
-        .media {
-          background-color: rgba(159, 135, 175, 0.8);
         }
         .title {
           color: #fff;
