@@ -1,7 +1,7 @@
 import Head from "next/head";
 import useSWR from "swr";
 import fetch from "node-fetch";
-import { Row, Col, Card, CardImg, Button, ButtonGroup, Media } from "react-bootstrap";
+import { Row, Col, Card, CardImg, Button, ButtonGroup } from "react-bootstrap";
 
 import Layout from "../components/layout";
 
@@ -49,9 +49,9 @@ function Creations() {
                       />
                     </Col>
                     <Col xs={9} md={8}>
-                      <Card.Header>{item.role}</Card.Header>
+                      <Card.Header style={{color: "#fff"}}>{item.role}</Card.Header>
                       <Card.Body className="ml-3" style={{textAlign: "left"}}>
-                        <Card.Title className="mt-0 title">
+                        <Card.Title className="mt-0" style={{color: "#B1DDF1"}}>
                           {item.creation}
                         </Card.Title>
                         <Card.Text>
@@ -66,16 +66,16 @@ function Creations() {
                           aria-label="Button links for app info"
                         >
                           <Button
-                            className="btn"
+                            className="project-link"
                             href={item.app}
                             title={item.creation}
                             target="_blank"
                             rel="noreferrer"
                           >
-                            live app
+                            app
                           </Button>
                           <Button
-                            className="btn"
+                            className="project-link"
                             href={item.code}
                             title={`GitHub Repo: ${item.creation}`}
                             target="_blank"
@@ -86,7 +86,7 @@ function Creations() {
                         </ButtonGroup>
                       </Card.Body>
                       <Card.Footer>
-                        <small className="text-muted">{`Tech Topics: ${item.tech}`}</small>
+                        <small className="text-muted creation-tech">{`Tech Topics: ${item.tech}`}</small>
                       </Card.Footer>
                     </Col>
                   </Row>
@@ -98,12 +98,6 @@ function Creations() {
       </>
 
       <style jsx>{`
-        .media-body {
-          text-align: left;
-        }
-        .title {
-          color: #fff;
-        }
         a:hover {
           background-color: #88527f;
           color: #fff;

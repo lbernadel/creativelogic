@@ -68,15 +68,26 @@ export default ({ children }) => (
         margin: 0 5vw;
         padding: 3vh 0 15vh 0;
       }
-      a {
-        cursor: pointer;
-      }
       .site-wrapper {
         min-height: 100vh;
         position: relative;
         width: 100vw;
         margin: 0;
         padding: 0;
+      }
+      .project-link {
+        background-color: #88527F;
+        color: #B1DDF1;
+        border: #fff solid 1px;
+        text-transform: uppercase;
+      }
+      .project-link:hover {
+        background-color: #B1DDF1;
+        color: #88527F;
+        border: none;
+      }
+      .creation-tech {
+        color: #fff !important;
       }
     `}</style>
   </div>
