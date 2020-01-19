@@ -29,7 +29,7 @@ function Creations() {
       <>
         <h1>Creations</h1>
         <Row>
-          <Col>
+          <Col lg>
             {data.map(item => {
               return (
                 <Card className="rounded my-4 mx-1"
@@ -39,16 +39,17 @@ function Creations() {
                   <Row className="no-gutters">
                     <Col
                       xs={3}
-                      md={4}
-                      className="align-content-center"
+                      lg={2}
+                      className="my-auto"
                     >
                       <CardImg
+                        className="project-img"
                         src={item.img}
                         alt={`${item.creation}-thumbnail`}
                         style={{ backgroundColor: "white" }}
                       />
                     </Col>
-                    <Col xs={9} md={8}>
+                    <Col xs={9} lg={10}>
                       <Card.Header style={{color: "#fff"}}>{item.role}</Card.Header>
                       <Card.Body className="ml-3" style={{textAlign: "left"}}>
                         <Card.Title className="mt-0" style={{color: "#B1DDF1"}}>
