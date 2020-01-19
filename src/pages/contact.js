@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Head from "next/head";
+import { Form, Col } from "react-bootstrap"
 
 import Layout from "../components/layout";
 
@@ -43,42 +44,40 @@ const Contact = () => {
       </Head>
 
       <span>
-        <h1 className="title">Contact</h1>
+        <h1 className="title mt-3">Contact</h1>
         <p className="info">
           Thanks for stopping by! You can send me a note with the form below.{" "}
         </p>
         <p>Please remember to be respectful.</p>
 
         {/* FORM */}
-        <form>
+        <Form>
           {/* First & Last Names */}
-          <div className="form-row">
-            <div className="form-group col-md-6">
-              <label htmlFor="firstName">First Name</label>
-              <input
+          <Form.Row>
+            <Form.Group as={Col} controlId="firstName">
+              <Form.Label column md="6">First Name</Form.Label>
+              <Form.Control as="input"
                 type="text"
                 name="firstName"
-                className="form-control"
                 placeholder="Jane"
                 onChange={handleInput}
               />
-            </div>
+            </Form.Group>
 
-            <div className="form-group col-md-6">
-              <label htmlFor="firstName">Last Name</label>
-              <input
+            <Form.Group as={Col} controlId="lastName">
+              <Form.Label column md={6}>Last Name</Form.Label>
+              <Form.Control as="input"
                 type="text"
                 name="lastName"
-                className="form-control"
                 placeholder="Doe"
                 onChange={handleInput}
               />
-            </div>
-          </div>
+            </Form.Group>
+          </Form.Row>
           {/* Email */}
-          <div className="form-row">
-            <div className="form-group col-12">
-              <label htmlFor="email">Email</label>
+          <Form.Row>
+            <Form.Group as={Col} controlId="email">
+              <Form.Label column xs={12}>Email</Form.Label>
               <input
                 name="email"
                 type="email"
@@ -87,8 +86,8 @@ const Contact = () => {
                 placeholder="name@example.com"
                 onChange={handleInput}
               />
-            </div>
-          </div>
+            </Form.Group>
+          </Form.Row>
           {/* Contact Reason */}
           <div className="form-row">
             <div className="form-group col-12">
@@ -121,16 +120,13 @@ const Contact = () => {
               ></textarea>
             </div>
           </div>
-          <button type="submit" onClick={handleSubmit} className="btn btn-info btn-block">
+          <button type="submit" onClick={handleSubmit} className="btn btn-info btn-block mb-3">
             Send
           </button>
-        </form>
+        </Form>
       </span>
 
-      <style jsx>{`
-        form {
-          padding: 5vh 20%;
-        }
+      {/* <style jsx>{`
         .form-group {
           width: 100%;
         }
@@ -141,7 +137,7 @@ const Contact = () => {
           line-height: 2rem;
           padding-top: 1rem;
         }
-      `}</style>
+      `}</style> */}
     </Layout>
   );
 };

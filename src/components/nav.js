@@ -29,7 +29,7 @@ const Navigation = () => (
 
     <Navbar.Toggle aria-controls="nav-menu" />
 
-    <Navbar.Collapse id="nav-menu">
+    <Navbar.Collapse className="nav-menu">
       {links.map(({ key, href, label }) => (
         <Nav.Link
           key={key}
@@ -43,52 +43,11 @@ const Navigation = () => (
       ))}
     </Navbar.Collapse>
 
-    <style jsx>{`
-      // nav {
-      //   height: inherit;
-      //   width: 100vw;
-      // }
-      // nav>ul {
-      //   display: flex;
-      //   padding: 0 0.5em;
-      //   margin: auto;
-      //   height: inherit;
-      //   width: 66%;
-      //   list-style: none;
-      //   align-items: center;
-      //   justify-content: space-evenly;
-      // }
-      // li {
-      //   padding: auto;
-      //   font-size: 1rem;
-      //   margin: 0 1em;
-      //   text-decoration: none;
-      // }
-      // a {
-      //   color: #614344;
-      //   text-decoration: none;
-      // }
-      #nav-menu>a:hover {
-        color: #9f87af;
-        border-bottom: 2px solid #fff;
-      }
-      // @media (max-width: 860px) {
-      //   nav {
-      //     flex-direction: column;
-      //     flex-wrap: wrap;
-      //     align-content: center;
-      //   }
-      //   ul {
-      //     flex-shrink: 2;
-      //     // align-self: flex-end;
-      //     float: right;
-      //   }
-      //   li {
-      //     display: inline-block;
-      //     font-size: 0.8rem;
-      //   }
-      // }
-    `}</style>
+    {/* <style jsx>{`
+  .nav-menu {
+    float: center;
+  }
+`}</style> */}
   </Navbar>
 );
 
