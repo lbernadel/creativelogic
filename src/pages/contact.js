@@ -24,7 +24,7 @@ const Contact = () => {
 
   const handleResponse = (status, msg) => {
     {
-      status === 200
+      status === 202
         ? setStatus({
             sentNote: true,
             sendingNote: false,
@@ -185,7 +185,7 @@ const Contact = () => {
           </Button>
         </Form>
 
-        {status.info.error === true && (
+        {status.info.error === true ? (
           <Alert variant="error">
             <Alert.Heading>Uh-oh!</Alert.Heading>
             <p>
@@ -196,13 +196,14 @@ const Contact = () => {
               .
             </p>
           </Alert>
-        )}
-        {status.info.error === false && status.info.msg && (
+        ) : (status.info.error === false && status.info.msg && (
           <Alert variant="success">
             <Alert.Heading>Yay!</Alert.Heading>
             <p>{status.info.msg}</p>
           </Alert>
-        )}
+        ))}
+
+        
       </main>
     </Layout>
   );

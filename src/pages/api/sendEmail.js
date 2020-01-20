@@ -12,7 +12,7 @@ export default async function(req, res) {
         to: {
           email: "hello@creativelogic.dev"
         },
-        subject: `New ${contactReason} message from creativelogic.dev!`
+        subject: `New ${contactReason} message on creativelogic.dev!`
       }
     ],
     from: {
@@ -26,7 +26,7 @@ export default async function(req, res) {
     content: [
       {
         type: "text/html",
-        value: `A message from ${firstName} ${lastName}: \n
+        value: `A message from ${firstName} ${lastName}:\n
         ${message}`
       }
     ]
