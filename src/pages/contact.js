@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import Head from "next/head";
-import { Form, Col } from "react-bootstrap"
+import { Form, Col, Button, Alert } from "react-bootstrap";
 
 import Layout from "../components/layout";
 
 const Contact = () => {
-  const [state, setState] = useState({
+  const [inputs, setInputs] = useState({
     firstName: "",
     lastName: "",
     email: "",
@@ -13,28 +13,69 @@ const Contact = () => {
     message: ""
   });
 
-  const handleInput = event => {
-    const { name, value } = event.target;
-    setState({
-      ...state,
-      [name]: value
+  const [status, setStatus] = useState({
+    sentNote: false,
+    sendingNote: false,
+    info: {
+      error: false,
+      msg: null
+    }
+  });
+
+  const handleResponse = (status, msg) => {
+    {
+      status === 200
+        ? setStatus({
+            sentNote: true,
+            sendingNote: false,
+            info: {
+              error: false,
+              msg: msg
+            }
+          }) &&
+          setInputs({
+            firstName: "",
+            lastName: "",
+            email: "",
+            contactReason: "",
+            message: ""
+          })
+        : setStatus({
+            info: {
+              error: true,
+              msg: msg
+            }
+          });
+    }
+  };
+
+  const handleInputChange = event => {
+    event.persist();
+
+    setInputs(prev => ({
+      ...prev,
+      [event.target.id]: event.target.value
+    }));
+
+    setStatus({
+      sentNote: false,
+      sendingNote: false,
+      info: { error: false, msg: null }
     });
   };
 
-  const handleSubmit = event => {
+  const handleSubmit = async event => {
     event.preventDefault();
+    setStatus(prevStatus => ({ ...prevStatus, sendingNote: true }));
 
-    fetch("/api/send", {
+    const res = await fetch("/api/sendEmail", {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        firstName: state.firstName,
-        lastName: state.lastName,
-        email: state.email,
-        contactReason: state.contactReason,
-        message: state.message
-      })
-    }).catch(error => console.log(error));
+      headers: { "authorization": `Bearer ${process.env.SENDGRID_API_KEY}`, "Content-Type": "application/json" },
+      body: JSON.stringify(inputs)
+    })
+
+    const msg = await res.msg();
+    handleResponse(res.status, msg);
   };
 
   return (
@@ -43,101 +84,126 @@ const Contact = () => {
         <title>Contact | Creative Logic</title>
       </Head>
 
-      <span>
+      <main>
         <h1 className="title mt-3">Contact</h1>
-        <p className="info">
-          Thanks for stopping by! You can send me a note with the form below.{" "}
+        <p style={{padding: "0 1rem", margin: "0.5rem 1.5rem 1.5rem 1.5rem"}}>
+          Thanks for stopping by! You can send me a note using the form below or email me at <a href="mailto:hello@creativelogic.dev">hello@creativelogic.dev</a>.
         </p>
-        <p>Please remember to be respectful.</p>
 
         {/* FORM */}
-        <Form>
+        <Form onSubmit={handleSubmit}>
           {/* First & Last Names */}
           <Form.Row>
             <Form.Group as={Col} controlId="firstName">
-              <Form.Label column md="6">First Name</Form.Label>
-              <Form.Control as="input"
+              <Form.Label column md="6">
+                First Name
+              </Form.Label>
+              <Form.Control
+                required
+                as="input"
                 type="text"
-                name="firstName"
+                value={inputs.firstName}
                 placeholder="Jane"
-                onChange={handleInput}
+                onChange={handleInputChange}
               />
             </Form.Group>
 
             <Form.Group as={Col} controlId="lastName">
-              <Form.Label column md={6}>Last Name</Form.Label>
-              <Form.Control as="input"
+              <Form.Label column md={6}>
+                Last Name
+              </Form.Label>
+              <Form.Control
+                required
+                as="input"
                 type="text"
-                name="lastName"
+                value={inputs.lastName}
                 placeholder="Doe"
-                onChange={handleInput}
+                onChange={handleInputChange}
               />
             </Form.Group>
           </Form.Row>
           {/* Email */}
           <Form.Row>
             <Form.Group as={Col} controlId="email">
-              <Form.Label column xs={12}>Email</Form.Label>
-              <input
-                name="email"
+              <Form.Label column xs={12}>
+                Email
+              </Form.Label>
+              <Form.Control
+                required
+                as="input"
                 type="email"
-                className="form-control"
-                id="email"
+                value={inputs.email}
                 placeholder="name@example.com"
-                onChange={handleInput}
+                onChange={handleInputChange}
               />
             </Form.Group>
           </Form.Row>
           {/* Contact Reason */}
-          <div className="form-row">
-            <div className="form-group col-12">
-              <label htmlFor="contactReason">Reason for Contact</label>
-              <select
-                className="form-control"
-                id="contactReason"
-                name="contactReason"
-                value={state.contactReason}
-                onChange={handleInput}
+          <Form.Row>
+            <Form.Group as={Col} controlId="contactReason">
+              <Form.Label>Reason for Contact</Form.Label>
+              <Form.Control
+                required
+                as="select"
+                value={inputs.contactReason}
+                onChange={handleInputChange}
               >
-                <option value="general">General</option>
-                <option value="job">Job Inquiry</option>
-                <option value="issue">Site issue</option>
-                <option value="other">Other</option>
-              </select>
-            </div>
-          </div>
+                <option>Choose a reason...</option>
+                <option>General</option>
+                <option>Job Inquiry</option>
+                <option>Site issue</option>
+                <option>Other</option>
+              </Form.Control>
+            </Form.Group>
+          </Form.Row>
           {/* Message Area */}
-          <div className="form-row">
-            <div className="form-group col-12">
-              <label htmlFor="message">Message</label>
-              <textarea
-                className="form-control"
-                id="message"
-                name="message"
-                placeholder="Drop me a note"
+          <Form.Row>
+            <Form.Group as={Col} controlId="message">
+              <Form.Label>Message</Form.Label>
+              <Form.Control
+                required
+                as="textarea"
                 rows="6"
-                onChange={handleInput}
-              ></textarea>
-            </div>
-          </div>
-          <button type="submit" onClick={handleSubmit} className="btn btn-info btn-block mb-3">
-            Send
-          </button>
+                value={inputs.message}
+                placeholder="Please remember to be respectful."
+                onChange={handleInputChange}
+              />
+            </Form.Group>
+          </Form.Row>
+          <Button
+            type="submit"
+            variant="info"
+            block
+            className="mb-5"
+            disabled={status.sendingNote}
+          >
+            {!status.sendingNote
+              ? !status.sentNote
+                ? "Send"
+                : "Sent!"
+              : "Sending..."}
+          </Button>
         </Form>
-      </span>
 
-      {/* <style jsx>{`
-        .form-group {
-          width: 100%;
-        }
-        // label {
-        //   padding: 2% 0;
-        // }
-        p > .info {
-          line-height: 2rem;
-          padding-top: 1rem;
-        }
-      `}</style> */}
+        {status.info.error && (
+          <Alert variant="error">
+            <Alert.Heading>Uh-oh!</Alert.Heading>
+            <p>
+              {status.info.msg}:{" "}
+              <Alert.Link href="mailto:hello@creativelogic.dev">
+                hello@creativelogic.com
+              </Alert.Link>
+              .
+            </p>
+          </Alert>
+        )}
+        {!status.info.error && status.info.msg && (
+          <Alert variant="success">
+            <Alert.Heading>Yay!</Alert.Heading>
+            <p>{status.info.msg}</p>
+          </Alert>
+        )}
+      </main>
     </Layout>
   );
 };
