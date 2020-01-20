@@ -70,7 +70,7 @@ const Contact = () => {
 
     const res = await fetch("/api/sendEmail", {
       method: "POST",
-      headers: { "authorization": `Bearer ${process.env.SENDGRID_API_KEY}`, "Content-Type": "application/json" },
+      headers: { "Content-Type": "application/json" },
       body: JSON.stringify(inputs)
     })
 
