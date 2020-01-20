@@ -74,8 +74,8 @@ const Contact = () => {
       body: JSON.stringify(inputs)
     })
 
-    const msg = await res.msg();
-    handleResponse(res.status, msg);
+    const text = await res.text();
+    handleResponse(res.status, text);
   };
 
   return (
