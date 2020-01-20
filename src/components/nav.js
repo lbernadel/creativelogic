@@ -18,6 +18,7 @@ const Navigation = () => (
       backgroundColor: "black",
       borderBottom: "10px solid #B1DDF1",
       height: "30vh",
+      width: "100vw",
       padding: "0.25rem !important",
       margin: "auto"
     }}
