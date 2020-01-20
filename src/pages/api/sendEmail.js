@@ -6,7 +6,7 @@ export default async function(req, res) {
 
   const { firstName, lastName, email, contactReason, message } = req.body
 
-  let msg = {
+  const note = {
     personalizations: [
       {
         to: {
@@ -33,12 +33,12 @@ export default async function(req, res) {
   }
 
   try {
-    await sgMail.send(msg)
+    await sgMail.send(note)
     res.status(202).send("Your note was sent successfully! Thank you!")
     
   } catch (error) {
     console.log("ERROR -------->", error)
-    if (res.status() >= 400) {
+    if (error) {
       res.send("Sorry, your note didn't go through. Please try again or email me directly")
     }
   }
