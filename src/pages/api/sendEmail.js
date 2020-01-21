@@ -30,8 +30,8 @@ export default async function(req, res) {
         type: "text/html",
         value: message
       }
-    ],
-    template_id: "d-c6535418cfb34d7798280f1642247430"
+    ]
+    // template_id: "d-c6535418cfb34d7798280f1642247430"
   };
 
   try {
