@@ -33,11 +33,10 @@ export default ({ children }) => (
     </Head>
 
     <Navigation />
-<main id="main-container">
-    <div id="content-wrap" >{children}</div>
+    <main id="main-container">
+      <div id="content-wrap">{children}</div>
 
-    <Footer />
-
-</main>
+      <Footer />
+    </main>
   </div>
 );
