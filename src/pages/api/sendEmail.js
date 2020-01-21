@@ -7,7 +7,6 @@ export default async function(req, res) {
   const { firstName, lastName, email, contactReason, message } = req.body;
 
   const note = {
-    template_id: "d-c6535418cfb34d7798280f1642247430",
     personalizations: [
       {
         to: {
@@ -31,7 +30,8 @@ export default async function(req, res) {
         type: "text/html",
         value: message
       }
-    ]
+    ],
+    template_id: "d-c6535418cfb34d7798280f1642247430"
   };
 
   try {
