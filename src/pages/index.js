@@ -12,7 +12,7 @@ const Home = () => (
       <title>Home</title>
     </Head>
 
-    <Jumbotron fluid={true} style={{backgroundColor: "rgba(159, 135, 175, 0.7)"}}>
+    <Jumbotron className="mt-5" fluid={true} style={{backgroundColor: "rgba(159, 135, 175, 0.7)"}}>
       <Container style={{paddingRight: "3rem", paddingLeft: "3rem"}}>
       <h1>Hello, I'm Laurie!</h1>
       <br />

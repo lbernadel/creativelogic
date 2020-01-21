@@ -9,10 +9,8 @@ const About = () => (
       <title>About | Creative Logic</title>
     </Head>
 
-    <div className="container">
-      <h1>About</h1>
+      <h1 className="mt-5">About</h1>
       <h6>This page is currently under construction. It'll be updated soon!</h6>
-    </div>
   </Layout>
 );
 
