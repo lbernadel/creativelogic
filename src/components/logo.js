@@ -1,4 +1,5 @@
 import { NavbarBrand, Container } from "react-bootstrap";
+import Link from "next/link";
 
 const Logo = () => (
   <Container
@@ -10,16 +11,15 @@ const Logo = () => (
       padding: "2px !important"
     }}
   >
-    <NavbarBrand
-      href="/"
-      style={{ height: "inherit", margin: "auto", width: "auto" }}
-    >
-      <img
-        style={{ height: "inherit", width: "inherit" }}
-        src="/static/creativelogic_long-black.png"
-        alt="Creative Logic Logo"
-      />
-    </NavbarBrand>
+    <Link href="/" passHref>
+      <NavbarBrand style={{ height: "inherit", margin: "auto", width: "auto" }}>
+        <img
+          style={{ height: "inherit", width: "inherit" }}
+          src="/static/creativelogic_long-black.png"
+          alt="Creative Logic Logo"
+        />
+      </NavbarBrand>
+    </Link>
   </Container>
 );
 
