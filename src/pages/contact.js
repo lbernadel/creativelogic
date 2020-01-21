@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Head from "next/head";
-import { Form, Col, Button, Alert } from "react-bootstrap";
+import { Form, Col, Button, Alert, Spinner } from "react-bootstrap";
 
 import Layout from "../components/layout";
 
@@ -72,7 +72,7 @@ const Contact = () => {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(inputs)
-    })
+    });
 
     const text = await res.text();
     handleResponse(res.status, text);
@@ -85,9 +85,11 @@ const Contact = () => {
       </Head>
 
       <main>
-        <h1 className="title mt-3">Contact</h1>
-        <p style={{padding: "0 1rem", margin: "0.5rem 1.5rem 1.5rem 1.5rem"}}>
-          Thanks for stopping by! You can send me a note using the form below or email me at <a href="mailto:hello@creativelogic.dev">hello@creativelogic.dev</a>.
+        <h1 className="mt-5">Contact</h1>
+        <p style={{ padding: "0 1rem", margin: "0.5rem 1.5rem 1.5rem 1.5rem" }}>
+          Thanks for stopping by! You can send me a note using the form below or
+          email me at{" "}
+          <a href="mailto:hello@creativelogic.dev">hello@creativelogic.dev</a>.
         </p>
 
         {/* FORM */}
@@ -177,33 +179,54 @@ const Contact = () => {
             className="mb-5"
             disabled={status.sendingNote}
           >
-            {!status.sendingNote
-              ? !status.sentNote
-                ? "Send"
-                : "Sent!"
-              : "Sending..."}
+            {!status.sendingNote ? (
+              !status.sentNote ? (
+                "Send"
+              ) : (
+                "Sent!"
+              )
+            ) : (
+              <>
+                <Spinner
+                  as="span"
+                  animation="grow"
+                  role="status"
+                  aria-hidden="true"
+                />{" "}
+                Sending...
+              </>
+            )}
           </Button>
         </Form>
 
         {status.info.error === true ? (
-          <Alert variant="error">
-            <Alert.Heading>Uh-oh!</Alert.Heading>
-            <p>
-              {status.info.msg}:{" "}
+          <Alert
+            variant="danger"
+            className="mx-auto"
+            style={{ maxWidth: "66.66vw" }}
+          >
+            <Alert.Heading>Aw, snap!</Alert.Heading>
+            <small>
+              {status.info.msg}{" "}
               <Alert.Link href="mailto:hello@creativelogic.dev">
                 hello@creativelogic.dev
               </Alert.Link>
               .
-            </p>
+            </small>
           </Alert>
-        ) : (status.info.error === false && status.info.msg && (
-          <Alert variant="success">
-            <Alert.Heading>Yay!</Alert.Heading>
-            <p>{status.info.msg}</p>
-          </Alert>
-        ))}
-
-        
+        ) : (
+          status.info.error === false &&
+          status.info.msg && (
+            <Alert
+              variant="success"
+              className="mx-auto"
+              style={{ maxWidth: "66.66vw" }}
+            >
+              <Alert.Heading>Yay!</Alert.Heading>
+              <small>{status.info.msg}</small>
+            </Alert>
+          )
+        )}
       </main>
     </Layout>
   );

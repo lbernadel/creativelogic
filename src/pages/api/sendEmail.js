@@ -25,21 +25,23 @@ export default async function(req, res) {
       email: email,
       name: `${firstName} ${lastName}`
     },
-    custom_args: `${contactReason}`,
-    content: {
-      type: "text/html",
-      value: `${message}`
-    }
+    custom_args: { topic: `${contactReason}` },
+    content: [
+      {
+        type: "text/html",
+        value: `${message}`
+      }
+    ]
   };
 
   try {
     await sgMail.send(note);
     res.status(202).send("Your note was sent successfully! Thank you!");
   } catch (error) {
-    console.log("ERROR -------->", error);
+    console.log("AN ERROR HAPPENED HERE ------>", error);
     if (error) {
       res.send(
-        "Sorry, your note didn't go through. Please try again or email me directly"
+        "Unfortunately, your note didn't go through. Please try again or email me directly at"
       );
     }
   }
