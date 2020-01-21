@@ -191,7 +191,7 @@ const Contact = () => {
             <p>
               {status.info.msg}:{" "}
               <Alert.Link href="mailto:hello@creativelogic.dev">
-                hello@creativelogic.com
+                hello@creativelogic.dev
               </Alert.Link>
               .
             </p>
