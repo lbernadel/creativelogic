@@ -9,7 +9,7 @@ import Layout from "../components/layout";
 const Home = () => (
   <Layout>
     <Head>
-      <title>Home</title>
+      <title>Home | Creative Logic</title>
     </Head>
 
     <Jumbotron className="mt-5" fluid={true} style={{backgroundColor: "rgba(159, 135, 175, 0.7)"}}>

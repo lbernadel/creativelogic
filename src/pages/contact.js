@@ -222,7 +222,7 @@ const Contact = () => {
               className="mx-auto"
               style={{ maxWidth: "66.66vw" }}
             >
-              <Alert.Heading>Yay!</Alert.Heading>
+              <Alert.Heading>Hooray!</Alert.Heading>
               <small>{status.info.msg}</small>
             </Alert>
           )

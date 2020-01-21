@@ -1,7 +1,16 @@
 import Head from "next/head";
 import useSWR from "swr";
 import fetch from "node-fetch";
-import { Row, Col, Card, CardImg, Button, ButtonGroup } from "react-bootstrap";
+import {
+  Row,
+  Col,
+  Card,
+  CardImg,
+  Button,
+  ButtonGroup,
+  Spinner,
+  Alert
+} from "react-bootstrap";
 
 import Layout from "../components/layout";
 
@@ -9,15 +18,6 @@ const fetcher = url => fetch(url).then(r => r.json());
 
 function Creations() {
   let { data, error } = useSWR("api/bestCreation", fetcher);
-
-  if (error)
-    return (data = (
-      <h5>
-        Aw, snap! Failed to fetch the creations. Please reload the page to try
-        again or come back later. If the issue persists, please send me a note
-        to <a href="/contact">let me know</a>let me know!
-      </h5>
-    ));
 
   return (
     <Layout>
@@ -28,8 +28,31 @@ function Creations() {
       <h1 className="mt-5">Creations</h1>
       <Row>
         <Col lg>
-          {!data ? (
-            <h4>Loading...</h4>
+          {error ? (
+            <Alert
+              variant="danger"
+              className="mx-auto"
+              style={{ maxWidth: "50vw", padding: "2rem" }}
+            >
+              <Alert.Heading><strong>Oh no!</strong></Alert.Heading>
+              <small>
+                Failed to fetch the creations. Please reload the page to try
+                again or come back later.<br />If the issue persists, please <a href="/contact">send me
+                a note</a> to let me know!
+              </small>
+            </Alert>
+          ) : !data ? (
+            <h4>
+              {" "}
+              <Spinner
+                as="span"
+                animation="border"
+                variant="info"
+                role="status"
+                aria-hidden="true"
+              />{" "}
+              Loading...
+            </h4>
           ) : (
             data.map(item => {
               return (
