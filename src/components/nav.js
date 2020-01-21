@@ -1,12 +1,14 @@
 import React from "react";
 import Logo from "./logo";
+import Link from "next/link";
+// import { NavLink } from "react-router-dom";
 import { Navbar, Nav } from "react-bootstrap";
 
 const links = [
-  { href: "/", label: "HOME" },
-  { href: "/about", label: "ABOUT" },
-  { href: "/creations", label: "CREATIONS" },
-  { href: "/contact", label: "CONTACT" }
+  { href: "/", label: "Home" },
+  { href: "/about", label: "About" },
+  { href: "/creations", label: "Creations" },
+  { href: "/contact", label: "Contact" }
 ].map(link => {
   link.key = `nav-tab-${link.label}`;
   return link;
@@ -24,7 +26,7 @@ const Navigation = () => (
     }}
     variant="dark"
     expand="md"
-    collapseOnSelect
+    // collapseOnSelect
   >
     <Logo />
 
@@ -32,23 +34,18 @@ const Navigation = () => (
 
     <Navbar.Collapse className="nav-menu">
       {links.map(({ key, href, label }) => (
-        <Nav.Link
-          key={key}
-          href={href}
-          title={label}
-          aria-label={label}
-          style={{ textAlign: "right", color: "#9f87af" }} 
-        >
-          {label}
-        </Nav.Link>
+        <Link href={href} key={key} passHref>
+          <Nav.Link
+            as="span"
+            title={label}
+            aria-label={label}
+            style={{ textAlign: "right", color: "#9f87af" }}
+          >
+            {label.toUpperCase()}
+          </Nav.Link>
+        </Link>
       ))}
     </Navbar.Collapse>
-
-    {/* <style jsx>{`
-  .nav-menu {
-    float: center;
-  }
-`}</style> */}
   </Navbar>
 );
 

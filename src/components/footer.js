@@ -1,11 +1,13 @@
 const Footer = () => (
   <footer id="footer-wrapper">
-    <p className="copyright">© {new Date().getFullYear()} Creative Logic. All rights reserved.</p>
+    <p className="copyright">
+      © {new Date().getFullYear()} Creative Logic. All rights reserved.
+    </p>
     <style jsx>{`
       #footer-wrapper {
         text-align: center;
-        background-color: #B1DDF1;
-        height: 15vh;
+        background-color: #b1ddf1;
+        height: 18vh;
         position: absolute;
         bottom: 0;
         width: 100vw;
