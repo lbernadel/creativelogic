@@ -25,11 +25,11 @@ export default async function(req, res) {
       email: email,
       name: `${firstName} ${lastName}`
     },
-    custom_args: { topic: `${contactReason}` },
+    custom_args: { topic: contactReason },
     content: [
       {
         type: "text/html",
-        value: `${message}`
+        value: message
       }
     ]
   };
