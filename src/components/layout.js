@@ -5,7 +5,7 @@ import Navigation from "./nav";
 import Footer from "./footer";
 
 export default ({ children }) => (
-  <div className="site-wrapper">
+  <div id="site-wrapper">
     <Head>
       <link rel="icon" href="/favicon.ico" />
       <link
@@ -33,9 +33,11 @@ export default ({ children }) => (
     </Head>
 
     <Navigation />
-
-    <div className="main-container">{children}</div>
+<main id="main-container">
+    <div id="content-wrap" >{children}</div>
 
     <Footer />
+
+</main>
   </div>
 );

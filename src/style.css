@@ -22,18 +22,18 @@ h6 {
 button {
   text-transform: capitalize;
 }
-.main-container {
+/* #site-wrapper, html {
   min-height: 100vh;
-  max-width: 90vw;
-  margin: 0 5vw;
-  padding: 3vh 0 15vh 0;
-}
-.site-wrapper {
+  width: 100%;
+  margin: 0;
+} */
+#main-container {
   min-height: 100vh;
   position: relative;
-  width: 100vw;
-  margin: 0;
-  padding: 0;
+}
+#content-wrap {
+  padding-bottom: 15vh;
+  margin: 0 5vw;
 }
 /* Navbar */
 .nav-link {
@@ -90,5 +90,5 @@ form {
   text-align: left;
 }
 .form-label {
-  padding: 0 0 0.5rem 0.5rem;
+  padding-left: 0.5rem;
 }
