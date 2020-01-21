@@ -13,7 +13,7 @@ export default async function(req, res) {
           email: "hello@creativelogic.dev",
           name: "Laurie Bernadel"
         },
-        subject: "New message!"
+        subject: `New ${contactReason} message!`
       }
     ],
     from: {
