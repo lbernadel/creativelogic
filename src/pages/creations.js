@@ -34,6 +34,10 @@ function Creations() {
       </Head>
 
       <h1 className="mt-5">Creations</h1>
+      <h4 style={{ fontFamily: '"Sedgwick Ave", cursive', color: "#88527f" }}>
+        ...where the magic of code transforms ideas into reality!
+      </h4>
+
       <Row>
         <Col>
           {error ? (
@@ -206,88 +210,7 @@ function Creations() {
                 ))}
               </Col>
             </Row>
-          )
-          // even.map(project => {
-          //   return (
-          //     <Row>
-          //       <Col>
-          //         <Card
-          //           className="rounded my-4 mx-1"
-          //           style={{ backgroundColor: "rgba(159, 135, 175, 0.8)" }}
-          //           key={project.app}
-          //         >
-          //           <Card.Header style={{ color: "#fff" }}>
-          //             {project.role}
-          //           </Card.Header>
-          //           <Card.Body className="pl-3" style={{ textAlign: "left" }}>
-          //             <CardImg
-          //               className="project-img mr-3 mb-3"
-          //               src={project.img}
-          //               alt={`${project.creation}-thumbnail`}
-          //               style={{ backgroundColor: "white" }}
-          //             />
-
-          //             <Card.Title
-          //               className="mt-0"
-          //               style={{ color: "#B1DDF1" }}
-          //             >
-          //               {project.creation}
-          //             </Card.Title>
-
-          //             <Card.Text>
-          //               <em>Description</em>: {project.description}
-          //             </Card.Text>
-
-          //             <Card.Text>
-          //               <strong>Contributions</strong>: {project.roleDetail}
-          //             </Card.Text>
-
-          //             <Card.Text
-          //               className="mx-auto"
-          //               style={{
-          //                 width: "33.33%",
-          //                 color: "#fff",
-          //                 textAlign: "center"
-          //               }}
-          //             >
-          //               <small>Take a look!</small>
-          //               <br />
-          //               <ButtonGroup
-          //                 as="span"
-          //                 className="py-2"
-          //                 role="group"
-          //                 aria-label="Button links for app info"
-          //               >
-          //                 <Button
-          //                   className="project-link"
-          //                   href={project.app}
-          //                   title={project.creation}
-          //                   target="_blank"
-          //                   rel="noreferrer"
-          //                 >
-          //                   app
-          //                 </Button>
-          //                 <Button
-          //                   className="project-link"
-          //                   href={project.code}
-          //                   title={`GitHub Repo: ${project.creation}`}
-          //                   target="_blank"
-          //                   rel="noreferrer"
-          //                 >
-          //                   code
-          //                 </Button>
-          //               </ButtonGroup>
-          //             </Card.Text>
-          //           </Card.Body>
-          //           <Card.Footer>
-          //             <small className="text-muted creation-tech">{`Tech Topics: ${project.tech}`}</small>
-          //           </Card.Footer>
-          //         </Card>
-          //     </Col>
-          //     </Row>
-          //   );
-          // })
-          }
+          )}
         </Col>
       </Row>
     </Layout>

@@ -85,21 +85,22 @@ const Contact = () => {
       </Head>
 
       <main>
-        <h1 className="mt-5">Contact</h1>
-        <p style={{ padding: "0 1rem", margin: "0.5rem 1.5rem 1.5rem 1.5rem" }}>
-          Thanks for stopping by! You can send me a note using the form below or
-          email me at{" "}
-          <a href="mailto:hello@creativelogic.dev">hello@creativelogic.dev</a>.
+        <h1 className="mt-5">Let's talk!</h1>
+        <h4 style={{ fontFamily: '"Sedgwick Ave", cursive', color: "#88527f" }}>
+          ...new ideas, old ideas, magic, life musings or even coffee.
+        </h4>
+        <p
+          style={{ padding: "0 1rem", margin: "0.5rem 1.5rem 1.75rem 1.5rem" }}
+        >
+          Send me a note using the form below. Thanks for stopping by!
         </p>
 
         {/* FORM */}
         <Form onSubmit={handleSubmit}>
           {/* First & Last Names */}
           <Form.Row>
-            <Form.Group as={Col} controlId="firstName">
-              <Form.Label column md="6">
-                First Name
-              </Form.Label>
+            <Form.Group as={Col} xs={12} md={6} controlId="firstName">
+              <Form.Label>First Name</Form.Label>
               <Form.Control
                 required
                 as="input"
@@ -110,10 +111,8 @@ const Contact = () => {
               />
             </Form.Group>
 
-            <Form.Group as={Col} controlId="lastName">
-              <Form.Label column md={6}>
-                Last Name
-              </Form.Label>
+            <Form.Group as={Col} xs={12} md={6} controlId="lastName">
+              <Form.Label>Last Name</Form.Label>
               <Form.Control
                 required
                 as="input"
