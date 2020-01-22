@@ -1,7 +1,6 @@
 import React from "react";
 import Logo from "./logo";
 import Link from "next/link";
-// import { NavLink } from "react-router-dom";
 import { Navbar, Nav } from "react-bootstrap";
 
 const links = [
@@ -22,11 +21,9 @@ const Navigation = () => (
       height: "30vh",
       width: "100vw",
       padding: "0.25rem !important",
-      margin: "auto"
     }}
     variant="dark"
     expand="md"
-    // collapseOnSelect
   >
     <Logo />
 
@@ -36,10 +33,9 @@ const Navigation = () => (
       {links.map(({ key, href, label }) => (
         <Link href={href} key={key} passHref>
           <Nav.Link
-            as="span"
             title={label}
             aria-label={label}
-            style={{ textAlign: "right", color: "#9f87af" }}
+            style={{ color: "#9f87af" }}
           >
             {label.toUpperCase()}
           </Nav.Link>

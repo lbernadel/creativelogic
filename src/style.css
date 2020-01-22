@@ -20,11 +20,9 @@ h2 {
 h6 {
   font-weight: 500;
 }
-button {
-  text-transform: capitalize;
-}
 #main-container {
   min-height: 100vh;
+  min-width: 100vw;
   position: relative;
 }
 #content-wrap {
@@ -34,7 +32,8 @@ button {
 /* Navbar */
 .nav-link {
   font-family: "Architects Daughter", cursive;
-  font-size: 1.25rem;
+  font-size: 1.5rem;
+  padding: 0.5rem;
 }
 .nav-link:hover {
   color: #b1ddf1 !important;
@@ -57,17 +56,25 @@ button {
   border-radius: 5px;
   box-shadow: 3px 3px rgba(69, 63, 55, 0.5);
 }
-.nav-menu.navbar-collapse.collapse.show > span.nav-link {
+.nav-menu.navbar-collapse.collapse.show > a.nav-link {
   width: 33.33vw;
   text-align: center !important;
   color: #e6e6e6 !important;
   margin: auto;
   height: auto;
 }
-.nav-menu.navbar-collapse.collapse.show > span.nav-link:hover {
+.nav-menu.navbar-collapse.collapse.show > a.nav-link:hover {
   color: #453f37 !important;
   font-weight: bold;
 }
+/* home page */
+#whoLink {
+  color: #88527f;
+}
+#whoLink:hover {
+  color: #b1ddf1;
+}
+
 /* Creations page */
 .card-img.project-img {
   max-width: 200px !important;
