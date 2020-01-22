@@ -5,6 +5,7 @@ body {
   color: #453f37;
   text-align: center;
   align-items: center;
+  width: 100vw;
   background: #fff url("/static/brushed-alum.png");
 }
 body {
@@ -22,11 +23,6 @@ h6 {
 button {
   text-transform: capitalize;
 }
-/* #site-wrapper, html {
-  min-height: 100vh;
-  width: 100%;
-  margin: 0;
-} */
 #main-container {
   min-height: 100vh;
   position: relative;
@@ -76,6 +72,7 @@ button {
 .card-img.project-img {
   max-width: 200px !important;
   max-height: 200px !important;
+  float: left;
 }
 .project-link {
   background-color: #88527f;
