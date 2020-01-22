@@ -4,7 +4,7 @@ export default async function(req, res) {
   sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
   const { firstName, lastName, email, contactReason, message } = req.body;
-
+  // console.log(req.body)
   const note = {
     personalizations: [
       {
@@ -12,7 +12,7 @@ export default async function(req, res) {
           email: "hello@creativelogic.dev",
           name: "Laurie Bernadel"
         },
-        subject: `New ${contactReason} message!`
+        subject: `New ${contactReason} Message!`
       }
     ],
     from: {
@@ -39,8 +39,9 @@ export default async function(req, res) {
   } catch (error) {
     console.log("AN ERROR HAPPENED HERE ------>", error);
     if (error) {
+      // console.log(note)
       res.send(
-        "Unfortunately, your note didn't go through. Please try again or email me directly at"
+        "Unfortunately, your note didn't go through. Please try again or send it to me directly at"
       );
     }
   }
