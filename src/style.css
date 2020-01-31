@@ -74,6 +74,11 @@ h6 {
 #whoLink:hover {
   color: #b1ddf1;
 }
+/* About page */
+.card-img-top.headshot {
+  height: 65vh;
+  object-fit: cover;
+}
 
 /* Creations page */
 .card-img.project-img {

@@ -18,6 +18,7 @@ const fetcher = url => fetch(url).then(r => r.json());
 
 function Creations() {
   let { data, error } = useSWR("api/bestCreation", fetcher);
+  //splitting items into even and odd indexes for better layout control
   const odd = data?.filter((v, i) => {
     return i % 2 == 1;
   });
@@ -40,6 +41,7 @@ function Creations() {
 
       <Row>
         <Col>
+        {/* display error message if loading properly can't happen */}
           {error ? (
             <Alert
               variant="danger"
@@ -58,6 +60,7 @@ function Creations() {
               </small>
             </Alert>
           ) : !data ? (
+            // Display loading message while connected but still gathering data
             <h4>
               {" "}
               <Spinner
@@ -70,6 +73,7 @@ function Creations() {
               Loading...
             </h4>
           ) : (
+            // Display the data if everything is all good
             <Row>
               <Col xs={12} lg={6}>
                 {even.map((project, index) => (

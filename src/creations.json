@@ -3,8 +3,8 @@
     "creation": "Hillcrest Charlotte",
     "img": "/static/HillcrestCLT.png",
     "role": "Co-Lead, Fullstack Developer (Team of 5)",
-    "roleDetail": "Built most of the front-end in React, created website theme with Material-UI, login/user authentication via Passport & JWT.",
-    "description": "A redesign of Hillcrest Baptist Church's website; the goal was to consolidate the information that the church provides its visitors and official members.",
+    "roleDetail": "Built most of the front-end with React & Material-UI, custom website theme with Material-UI, PWA setup, and setup of login/user authentication via Passport & JWT",
+    "description": "A redesign of Hillcrest Baptist Church's website that consolidates the large amounts of information and resources the church provides its visitors and official members, reduces manual entry of form data, and provides 24/7 access to information.",
     "tech": "MERN stack, Material-UI, Axios, Passport.js, JSON Web Tokens (JWT), Chart.js, SendGrid",
     "app": "https://hillcrestcharlotte.herokuapp.com/",
     "code": "https://github.com/bsjherbert/HillcrestCharlotte"
@@ -14,7 +14,7 @@
     "img": "/static/fitnessmate.png",
     "role": "Sole Developer",
     "roleDetail": "Created both front and back-end, following MVC structure with GET, POST, and UPDATE routes for the database.",
-    "description": "A fitness planner; displays activities planned for created workout sessions by date.",
+    "description": "A digital fitness planner utilizing database storage to allow creation and modification of workout plans by date.",
     "tech": "MongoDB/Mongoose, Bootstrap, Express.js, Node.js, REST APIs",
     "app": "https://fitnessmate.herokuapp.com/",
     "code": "https://github.com/lbernadel/fitnessmate"
