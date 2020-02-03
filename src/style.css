@@ -76,8 +76,15 @@ h6 {
 }
 /* About page */
 .card-img-top.headshot {
-  height: 65vh;
+  height: 45vh;
+  /* width: 50vw; */
   object-fit: cover;
+  /* margin: auto; */
+}
+.about.card-subtitle {
+  color: #88527f;
+  /* font-weight: bold;
+  font-size: smaller; */
 }
 
 /* Creations page */

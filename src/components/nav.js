@@ -22,14 +22,15 @@ const Navigation = () => (
       width: "100vw",
       padding: "0.25rem !important",
     }}
+    collapseOnSelect
     variant="dark"
     expand="md"
   >
     <Logo />
 
-    <Navbar.Toggle aria-controls="nav-menu" />
+    <Navbar.Toggle aria-controls="nav-menu" style={{fontSize: "1rem"}} />
 
-    <Navbar.Collapse className="nav-menu">
+    <Navbar.Collapse className="nav-menu justify-content-end mr-2 pr-2">
       {links.map(({ key, href, label }) => (
         <Link href={href} key={key} passHref>
           <Nav.Link
