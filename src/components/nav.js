@@ -20,7 +20,6 @@ const Navigation = () => (
       borderBottom: "10px solid #B1DDF1",
       height: "30vh",
       width: "100vw",
-      padding: "0.25rem !important",
     }}
     collapseOnSelect
     variant="dark"
@@ -28,7 +27,7 @@ const Navigation = () => (
   >
     <Logo />
 
-    <Navbar.Toggle aria-controls="nav-menu" style={{fontSize: "1rem"}} />
+    <Navbar.Toggle aria-controls="nav-menu" />
 
     <Navbar.Collapse className="nav-menu justify-content-end mr-2 pr-2">
       {links.map(({ key, href, label }) => (

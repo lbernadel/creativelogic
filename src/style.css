@@ -1,5 +1,5 @@
 /* General layout */
-html,
+
 body {
   font-family: Verdana, Geneva, sans-serif;
   color: #453f37;
@@ -7,9 +7,9 @@ body {
   align-items: center;
   width: 100vw;
   background: #fff url("/static/brushed-alum.png");
-}
-body {
   margin: 0;
+  padding: 0;
+  /* overflow-x: hidden; */
 }
 h1 {
   font-family: "Sedgwick Ave", cursive;
@@ -30,6 +30,10 @@ h6 {
   margin: 0 5vw;
 }
 /* Navbar */
+nav.navbar {
+  padding: 0.25rem !important;
+}
+
 .nav-link {
   font-family: "Architects Daughter", cursive;
   font-size: 1.5rem;
@@ -115,4 +119,31 @@ form {
 }
 .form-label {
   padding-left: 0.5rem;
+}
+
+/* Media Queries */
+/* items below xs breakpoint */
+@media (max-width: 575.98px) {
+  nav > div.justify-content-center.container {
+    padding-right: 1em;
+    height: 20vh !important;
+    width: 80vw !important;
+    /* -webkit-transform: scale(0.85);
+    -moz-transform: scale(0.85);
+    -o-transform: scale(0.85);
+    transform: scale(0.85); */
+  }
+  .card-img.project-img {
+    max-width: 150px !important;
+    max-height: 150px !important;
+  }
+  .card-header {
+    padding: 0.75rem;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 800px) {
+  .nav-link {
+    font-size: 1.25rem;
+  }
 }

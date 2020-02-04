@@ -7,12 +7,10 @@ const Logo = () => (
     style={{
       width: "auto",
       height: "25vh",
-      margin: "auto",
-      padding: "2px !important"
     }}
   >
     <Link href="/" passHref>
-      <NavbarBrand style={{ height: "inherit", margin: "auto", width: "auto" }}>
+      <NavbarBrand style={{ height: "inherit", width: "auto", float: "left" }}>
         <img
           style={{ height: "inherit", width: "inherit" }}
           src="/static/creativelogic_long-black.png"

@@ -1,4 +1,5 @@
 import Head from "next/head";
+// import {Container} from "react-bootstrap"
 
 import "../style.css";
 import Navigation from "./nav";
@@ -33,10 +34,12 @@ export default ({ children }) => (
     </Head>
 
     <Navigation />
-    <main id="main-container">
-      <div id="content-wrap">{children}</div>
+    {/* <Container fluid> */}
+      <main id="main-container">
+        <div id="content-wrap">{children}</div>
 
-      <Footer />
-    </main>
+        <Footer />
+      </main>
+    {/* </Container> */}
   </div>
 );
