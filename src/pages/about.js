@@ -61,8 +61,8 @@ const About = () => {
 
             <Card.Body>
               <Card.Subtitle className="mb-2 about">Find me</Card.Subtitle>
-              <Card.Link href="#" title="Laurie's LinkedIn" target="_blank" rel="noreferrer">LinkedIn</Card.Link>
-              <Card.Link href="#" title="Laurie's GitHub" target="_blank" rel="noreferrer">GitHub</Card.Link>
+              <Card.Link href="https://www.linkedin.com/in/lauriebernadel/" title="Laurie's LinkedIn" target="_blank" rel="noreferrer">LinkedIn</Card.Link>
+              <Card.Link href="https://github.com/lbernadel" title="Laurie's GitHub" target="_blank" rel="noreferrer">GitHub</Card.Link>
             </Card.Body>
           </Card>
         </Col>
