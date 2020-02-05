@@ -1,12 +1,12 @@
 import Head from "next/head";
-// import {Container} from "react-bootstrap"
+import {Container} from "react-bootstrap"
 
 import "../style.css";
 import Navigation from "./nav";
 import Footer from "./footer";
 
 export default ({ children }) => (
-  <div id="site-wrapper">
+  <>
     <Head>
       <link rel="icon" href="/favicon.ico" />
       <link
@@ -41,5 +41,5 @@ export default ({ children }) => (
         <Footer />
       </main>
     {/* </Container> */}
-  </div>
+  </>
 );

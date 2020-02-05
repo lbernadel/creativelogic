@@ -7,6 +7,7 @@ const Logo = () => (
     style={{
       width: "auto",
       height: "25vh",
+      paddingLeft: 0
     }}
   >
     <Link href="/" passHref>

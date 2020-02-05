@@ -14,7 +14,7 @@ const Footer = () => (
       }
       .copyright {
         margin: 7vh auto;
-        width: 66.66vw;
+        width: 80vw;
         color: #614344;
         font-size: 0.8rem;
       }

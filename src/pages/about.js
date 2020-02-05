@@ -46,7 +46,7 @@ const About = () => {
       </h4>
 
       <Row className="mb-5">
-        <Col xs={{ span: 10, offset: 1, order: 2 }} lg={{ span: 3, offset: 0, order: 1 }}  className="mt-4">
+        <Col xs={{ span: 12, offset: 0, order: 2 }} lg={{ span: 3, offset: 0, order: 1 }}  className="mt-4">
           <Card>
             <Card.Img className="headshot" variant="top" alt="Laurie's headshot" src="/static/Laurie_headshot.jpg" style={{ border: "solid 2px rgb(136, 82, 127)" }} />
             <Card.Body>

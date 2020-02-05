@@ -1,10 +1,13 @@
 /* General layout */
-
+html {
+  width: 100%;
+  zoom: 1
+}
 body {
   font-family: Verdana, Geneva, sans-serif;
   color: #453f37;
   text-align: center;
-  align-items: center;
+  /* align-items: center; */
   width: 100vw;
   background: #fff url("/static/brushed-alum.png");
   margin: 0;
@@ -31,7 +34,7 @@ h6 {
 }
 /* Navbar */
 nav.navbar {
-  padding: 0.25rem !important;
+  padding: 0.5rem !important;
 }
 
 .nav-link {
@@ -54,7 +57,7 @@ nav.navbar {
   padding: 0;
   margin-left: 50vw;
   position: relative;
-  top: -40px;
+  /* top: -40px; */
   z-index: 3;
   border: 1px solid;
   border-radius: 5px;
@@ -142,7 +145,7 @@ form {
   }
 }
 
-@media (min-width: 768px) and (max-width: 800px) {
+@media (min-width: 768px) and (max-width: 850px) {
   .nav-link {
     font-size: 1.25rem;
   }
