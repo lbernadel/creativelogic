@@ -12,7 +12,13 @@ export default async function(req, res) {
           email: "hello@creativelogic.dev",
           name: "Laurie Bernadel"
         },
-        subject: `New ${contactReason} Message!`
+        subject: "New message via creativelogic.dev!",
+        preheader: `Someone sent you a ${contactReason.toLowercase()} note...`,
+        dynamic_template_data: {
+          name: `${firstName} ${lastName}`,
+          reason: contactReason,
+          message: message
+        }
       }
     ],
     from: {
@@ -23,14 +29,14 @@ export default async function(req, res) {
       email: email,
       name: `${firstName} ${lastName}`
     },
-    custom_args: { topic: contactReason },
-    content: [
-      {
-        type: "text/html",
-        value: message
-      }
-    ]
-    // template_id: "d-c6535418cfb34d7798280f1642247430"
+    // custom_args: { topic: contactReason },
+    // content: [
+    //   {
+    //     type: "text/html",
+    //     value: message
+    //   }
+    // ]
+    template_id: "d-c6535418cfb34d7798280f1642247430"
   };
 
   try {
