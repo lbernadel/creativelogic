@@ -206,7 +206,7 @@ const Contact = () => {
           >
             <Alert.Heading>Aw, snap!</Alert.Heading>
             <small>
-              {status.info.msg}{" "}
+              {status.info.msg} Please try again or send it to me directly at
               <Alert.Link href="mailto:hello@creativelogic.dev">
                 hello@creativelogic.dev
               </Alert.Link>

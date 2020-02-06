@@ -13,7 +13,7 @@ export default async function(req, res) {
           name: "Laurie Bernadel"
         },
         subject: "New message via creativelogic.dev!",
-        preheader: `Someone sent you a ${contactReason.toLowercase()} note...`,
+        // preheader: `Someone sent you a ${contactReason.toLowercase()} note...`,
         dynamic_template_data: {
           name: `${firstName} ${lastName}`,
           reason: contactReason,
@@ -37,7 +37,7 @@ export default async function(req, res) {
     //   }
     // ]
     template_id: "d-c6535418cfb34d7798280f1642247430"
-  };
+  }
 
   try {
     await sgMail.send(note);
@@ -47,7 +47,7 @@ export default async function(req, res) {
     if (error) {
       // console.log(note)
       res.send(
-        "Unfortunately, your note didn't go through. Please try again or send it to me directly at"
+        "Unfortunately, your note didn't go through."
       );
     }
   }
