@@ -149,7 +149,7 @@ const Contact = () => {
                 value={inputs.contactReason}
                 onChange={handleInputChange}
               >
-                <option>Choose a reason...</option>
+                <option value="">Choose a reason...</option>
                 <option>General</option>
                 <option>Job Inquiry</option>
                 <option>Site issue</option>
@@ -206,7 +206,7 @@ const Contact = () => {
           >
             <Alert.Heading>Aw, snap!</Alert.Heading>
             <small>
-              {status.info.msg} Please try again or send it to me directly at
+              {status.info.msg} Please try again or send it to me directly at{" "}
               <Alert.Link href="mailto:hello@creativelogic.dev">
                 hello@creativelogic.dev
               </Alert.Link>

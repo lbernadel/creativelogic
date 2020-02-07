@@ -13,7 +13,7 @@ export default async function(req, res) {
           name: "Laurie Bernadel"
         },
         dynamic_template_data: {
-          preheader: `Someone sent you a ${contactReason.toLowercase()} note...`,
+          preheader: `A ${contactReason} note...`,
           name: `${firstName} ${lastName}`,
           reason: contactReason,
           message: message
