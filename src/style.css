@@ -32,6 +32,7 @@ h6 {
   padding-bottom: 18vh;
   margin: 0 5vw;
 }
+
 /* Navbar */
 nav.navbar {
   padding: 0.5rem !important;
@@ -74,13 +75,14 @@ nav.navbar {
   color: #453f37 !important;
   font-weight: bold;
 }
-/* home page */
+/* Home page */
 #whoLink {
   color: #88527f;
 }
 #whoLink:hover {
   color: #b1ddf1;
 }
+
 /* About page */
 .card-img-top.headshot {
   height: 45vh;

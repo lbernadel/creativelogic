@@ -13,7 +13,7 @@ export default async function(req, res) {
           name: "Laurie Bernadel"
         },
         dynamic_template_data: {
-          preheader: `A ${contactReason} note...`,
+          preheader: `A ${contactReason} note was submitted. `,
           name: `${firstName} ${lastName}`,
           reason: contactReason,
           message: message
