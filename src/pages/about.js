@@ -73,7 +73,7 @@ const About = () => {
               <Card.Title>What do I do?</Card.Title>
               <Card.Text>
                 <strong>I aim to turn ideas into reality.</strong> There's nothing more thrilling than seeing dreams evolve into tangible celebrations. Leveraging a background in psychology and utilizing over five years of knowledge and skills related to client services/relations, I'm committed to building more intuitive user experiences on the web in a way driven by technology innovation, curiosity, creativity and passion. Do you have an idea you want to bring to life? <Link href="/contact" passHref>
-                  <a aria-label="Contact">Let's take that leap together.</a>
+                  <a aria-label="Contact" color="info">Let's take that leap together.</a>
                 </Link>
               </Card.Text>
 
@@ -91,7 +91,7 @@ const About = () => {
             <Card.Body>
               <Card.Title>How did I get into web development?</Card.Title>
               <Card.Text>
-                Generally inspired by a love of creativity and driven by curiosity, web development actually came as an unexpected part of my journey. Three years out of undergrad with a Psychology, BS and working in the medical realm of ophthalmology, I was looking for my next step and considering teaching myself a new skill, but not sure how. One day, the magic of cookies and Facebook ads brought me information on a full-stack coding a boot camp through my alma mater. Web development opened up a brand new world of intriguing frustration and excitement, blending my inquisitorial and imaginative natures to bring ideas to life.
+                Generally inspired by a love of creativity and driven by curiosity, web development actually came as an unexpected part of my journey. Three years out of undergrad with a Psychology, BS and working in the ophthalmology realm of medicine, I was looking for my next step; I considered teaching myself a new skill, but wasn't sure how. One day, the magic of cookies and Facebook ads brought me information on a full-stack coding a boot camp through my alma mater. Web development opened up a brand new world of intriguing frustration and excitement, blending my inquisitorial and imaginative natures to bring digital ideas to life.
               </Card.Text>
             </Card.Body>
           </Card>
