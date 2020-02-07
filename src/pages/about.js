@@ -1,5 +1,6 @@
 import React, { useCallback, useState, useEffect, useRef } from "react";
 import Head from "next/head";
+import Link from "next/link";
 import { Row, Col, Card, ListGroup, ListGroupItem } from "react-bootstrap";
 
 import Layout from "../components/layout";
@@ -46,7 +47,7 @@ const About = () => {
       </h4>
 
       <Row className="mb-5">
-        <Col xs={{ span: 12, offset: 0, order: 2 }} lg={{ span: 3, offset: 0, order: 1 }}  className="mt-4">
+        <Col xs={{ span: 12, offset: 0, order: 2 }} lg={{ span: 3, offset: 0, order: 1 }} className="mt-4">
           <Card>
             <Card.Img className="headshot" variant="top" alt="Laurie's headshot" src="/static/Laurie_headshot.jpg" style={{ border: "solid 2px rgb(136, 82, 127)" }} />
             <Card.Body>
@@ -71,23 +72,26 @@ const About = () => {
             <Card.Body>
               <Card.Title>What do I do?</Card.Title>
               <Card.Text>
-              With an affinity for front-end design, I aim to turn ideas into reality. There's nothing more thrilling than seeing dreams evolve into tangible celebrations. Leveraging a background in psychology and utilizing over five years of knowledge and skills related to client services and relations in a way driven by technology innovation, curiosity, creativity and passion to build more intuitive user experiences on the web.
+                <strong>I aim to turn ideas into reality.</strong> There's nothing more thrilling than seeing dreams evolve into tangible celebrations. Leveraging a background in psychology and utilizing over five years of knowledge and skills related to client services/relations, I'm committed to building more intuitive user experiences on the web in a way driven by technology innovation, curiosity, creativity and passion. Do you have an idea you want to bring to life? <Link href="/contact" passHref>
+                  <a aria-label="Contact">Let's take that leap together.</a>
+                </Link>
               </Card.Text>
+
+              <Card.Subtitle className="mb-1 about">Top Skills</Card.Subtitle>
+              <ul className="px-3 mx-2" style={{ fontSize: "0.85rem", listStyleType: "none", display: "inline" }}>
+                <li className="py-1">JavaScript</li>
+                <li className="py-1">CSS</li>
+                <li className="py-1">Responsive Design</li>
+                <li className="py-1">React.js</li>
+                <li className="py-1">Database Management</li>
+                <li className="py-1">Progressive Web Apps (PWAs)</li>
+              </ul>
             </Card.Body>
-            <Card.Subtitle className="mb-1 about">Top Skills</Card.Subtitle>
-            <ul className="px-3 mx-2" style={{ fontSize: "0.85rem", listStyleType: "none", display: "inline" }}>
-              <li className="py-1">JavaScript</li>
-              <li className="py-1">CSS</li>
-              <li className="py-1">Responsive Design</li>
-              <li className="py-1">React.js</li>
-              <li className="py-1">Database Management</li>
-              <li className="py-1">Progressive Web Apps (PWAs)</li>
-            </ul>
 
             <Card.Body>
               <Card.Title>How did I get into web development?</Card.Title>
               <Card.Text>
-                Inspired by a love of creativity and driven by curiosity, web development came as an unexpected part of my journey. Three years out of undergrad with a Psychology, BS and working in the medical world of ophthalmology, I was looking for my next step and then one day the magic of cookies and Facebook ads brought me to a boot camp. Combined with my vast curiosity in how things work and the puzzles of life, web development opened up a brand new world of intriguing frustration and excitement.
+                Generally inspired by a love of creativity and driven by curiosity, web development actually came as an unexpected part of my journey. Three years out of undergrad with a Psychology, BS and working in the medical realm of ophthalmology, I was looking for my next step and considering teaching myself a new skill, but not sure how. One day, the magic of cookies and Facebook ads brought me information on a full-stack coding a boot camp through my alma mater. Web development opened up a brand new world of intriguing frustration and excitement, blending my inquisitorial and imaginative natures to bring ideas to life.
               </Card.Text>
             </Card.Body>
           </Card>
